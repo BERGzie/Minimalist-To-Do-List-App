@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Minimalist To-Do List</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app-shell">
+    <section class="panel">
+      <header class="panel-header">
+        <h1>Minimalist To-Do</h1>
+        <p>Keep your day sorted with clean, simple task tracking.</p>
+      </header>
+
+      <form id="task-form" class="task-form" aria-label="Add new task">
+        <label class="sr-only" for="task-input">Task description</label>
+        <input id="task-input" type="text" placeholder="Add a new task..." autocomplete="off" />
+
+        <label class="sr-only" for="priority-select">Priority</label>
+        <select id="priority-select" aria-label="Task priority">
+          <option value="low">Low</option>
+          <option value="medium" selected>Medium</option>
+          <option value="high">High</option>
+        </select>
+
+        <button type="submit" class="primary-button">Add Task</button>
+      </form>
+
+      <div class="filters" role="group" aria-label="Task filters">
+        <button type="button" class="filter-button active" data-filter="all">All</button>
+        <button type="button" class="filter-button" data-filter="pending">Pending</button>
+        <button type="button" class="filter-button" data-filter="completed">Completed</button>
+      </div>
+
+      <ul id="task-list" class="task-list" aria-live="polite"></ul>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
